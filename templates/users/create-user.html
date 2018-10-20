@@ -1,0 +1,95 @@
+{% extends 'base/dashboard_base.html' %}
+{% load staticfiles %}
+{% block title %} Crear Usuario{% endblock %}
+{% block pageclass %} main {% endblock %}
+{% block divconfig %}  {% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+        <div class="content">
+                <div class="container">
+                    <div class="row">
+                    <br><br><br><br>
+                        <div class="col-sm-12">
+                            <form class="form" method="post" action="">
+                                <div class="card-content">
+                                    {% csrf_token %}
+                                    <!-- BEGIN username -->
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">face</i>
+                                                    </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Username</label>
+                                            {{ form.username |add_class:"form-control" }}
+                                        </div>
+                                    </div>
+                                    <!-- END username -->
+                                    <!-- BEGIN passwords -->
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">lock_outline</i>
+                                                    </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Contraseña</label>
+                                            {{ form.password |add_class:"form-control" }}
+                                        </div>
+                                    </div>
+                                    <!-- END password -->
+                                    <!-- BEGIN email -->
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">email</i>
+                                                    </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Email</label>
+                                            {{ form.email |add_class:"form-control"}}
+                                        </div>
+                                    </div>
+                                    <!-- END email -->
+                                    <!-- BEGIN first name -->
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">text_fields</i>
+                                                    </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Nombre</label>
+                                            {{ form.first_name |add_class:"form-control" }}
+                                        </div>
+                                    </div>
+                                    <!-- END first name -->
+                                    <!-- BEGIN last name -->
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">text_fields</i>
+                                                    </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Apellido</label>
+                                            {{ form.last_name |add_class:"form-control" }}
+                                        </div>
+                                    </div>
+                                    <!-- END last name -->
+                                    <br>
+                                    <!-- BEGIN type -->
+                                    <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">dashboard</i>
+                                                    </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Tipo de Usuario</label>
+                                            {{ form.user_type |add_class:"form-control"}}
+                                        </div>
+                                    </div>
+                                    <!-- END type -->
+                                    <div class="checkbox">
+                                    </div>
+                                </div>
+                                <div class="footer text-center">
+                                    <input type="submit" value="Crear" class="btn btn-lg btn-success">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+<br><br><br>
+{% endblock %}

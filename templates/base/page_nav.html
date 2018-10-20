@@ -1,0 +1,88 @@
+{% load staticfiles %}
+    <div class="container" id="banner">
+      <div class="row">
+          <div class="col-lg-9">
+              <h1> Graham </h1>
+          </div>
+          <div class="col-lg-3">
+            <div class="row">
+                <br>
+                   <button class="btn btn-just-icon btn-facebook">
+                        <i class="fa fa-facebook"></i>
+                    </button>
+                    <button class="btn btn-just-icon btn-twitter">
+                        <i class="fa fa-twitter"></i>
+                    </button>
+                   <button class="btn btn-just-icon btn-youtube">
+                        <i class="fa fa-youtube"></i>
+                    </button>
+            </div>
+          </div>
+      </div>
+    </div>
+<script>
+    $('#topnavbar').affix({
+    offset: {
+        top: $('#banner').height()
+    }
+});
+</script>
+     <nav class="navbar navbar-primary  navbar-absolute" id="topnavbar" style="background-color: #273F75; border-bottom-color: #273F75;">
+        <div class="container">
+            <div class="navbar-header">
+                <button style="color: gray;" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--logo begin-->
+                <!--logo end-->
+            </div>
+
+            <div class="collapse navbar-collapse" id="navigation-example-2">
+                <ul class="nav nav-justified">
+                    <!--
+                    <li>
+                        <a href=""  >
+                            <i class="material-icons">dashboard</i> Dashboard
+                        </a>
+                    </li>
+                    -->
+                    <!--
+                    <li class="" >
+                        <a href=""  >
+                            <i class="material-icons">person_add</i> Sign Up
+                        </a>
+                    </li>
+                    -->
+                    <li class="<!--active-->" >
+                        <a href="{% url 'home' %}"  >
+                            <i class="material-icons"  >fingerprint</i> Iniciar Sesion
+                        </a>
+                    </li>
+                    <!--
+                    <li class="">
+                        <a href=""  >
+                            <i class="material-icons">attach_money</i> Pricing
+                        </a>
+                    </li>
+                    -->
+                    <!--
+                    <li class="" >
+                        <a href=""  >
+                            <i class="material-icons">mail</i> Contact
+                        </a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+             <style>
+              .navbar-nav.navbar-center {
+                position: absolute;
+                left: 50%;
+                transform: translatex(-50%);
+              }
+            </style>
+        </div>
+    </nav>

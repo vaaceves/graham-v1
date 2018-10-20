@@ -1,0 +1,65 @@
+{% extends 'base/page_base.html' %}
+{% load staticfiles %}
+{% block title %} Home {% endblock %}
+{% block pageclass %}full-page login-page {% endblock %}
+{% block divconfig %} filter-color="black" data-image="{% static 'img/SaturdaySoccer4.jpg' %}" {% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+        <div class="content">
+                <div class="container">
+                    <div class="row">
+                    <br><br>
+                        <div class="col-sm-8 col-sm-6 col-md-offset-3 col-sm-offset-3">
+                            <form method="post" action="#">
+                                <div class="card card-login card-hidden">
+                                    <div class="card-header text-center" data-background-color="blue">
+                                        <h4 class="card-title">Bienvenido</h4>
+                                    </div>
+                                    <br>
+                                    <div class="">
+                                        {% if login_error_message %}
+                                            <div class="alert alert-danger alert-with-icon">
+                                                <i class="material-icons" data-notify="icon" >error_outline</i>
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+                                                <span class="text-center" data-notify="message">{{ login_error_message }}</span>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="card-content">
+                                        {% csrf_token %}
+                                        <!-- BEGIN username -->
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">face</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Username</label>
+                                                {{ login_form.username |add_class:"form-control" }}
+                                            </div>
+                                        </div>
+                                        <!-- END username -->
+                                        <!-- BEGIN passwords -->
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">lock_outline</i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Password</label>
+                                                {{ login_form.password |add_class:"form-control" }}
+                                            </div>
+                                        </div>
+                                        <!-- END password -->
+                                        <div class="text-center" style="padding-left: 15px;">
+                                            <br>
+                                            <input type="submit" class="btn btn-success btn-wd btn-lg" value="Ingresar">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+<br><br><br>
+{% endblock %}
